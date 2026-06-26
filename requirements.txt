@@ -1,0 +1,14 @@
+# LoL Radar Engine - Python dependencies
+# Python >= 3.10 recommended
+
+# ── 必装：Web API / 网页托管 ────────────────────────────────
+Flask>=3.0
+
+# ── 可选：PDF 报告导出 ──
+# WeasyPrint 需要系统库 pango/cairo/gdk-pixbuf + CJK 字体，安装较重。
+# 普通使用（雷达页 + 图集页）不需要；只有运行 scripts/make_*_report.py 时才装：
+#   pip install -r requirements-report.txt
+#
+# 备注：
+# - ETL 管线 (scripts/01..08) 只用 Python 标准库（sqlite3/csv/statistics/pickle/math）
+# - 静态导出已存放在 web/data/，前端可在零依赖下直接浏览（python -m http.server）

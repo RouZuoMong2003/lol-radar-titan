@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<title>LoL Radar · 英雄联盟职业选手六维雷达</title>
+<meta name="description" content="基于 Oracle's Elixir 一级数据的英雄联盟职业选手 / 队伍六维能力雷达。">
+<meta name="theme-color" content="#fdfbf7">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/tokens.css?v=20260626d">
+<link rel="stylesheet" href="./assets/css/components.css?v=20260626d">
+<link rel="stylesheet" href="./assets/css/radar-mobile.css?v=20260626d">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <div class="poster-card" id="poster-card" data-view="empty-seasons">
+
+    <!-- 左栏 / 移动端顶部：控制条 + 标题 + 评分 + 公式 -->
+    <aside class="sidebar-col fade-in">
+
+      <nav class="controls" id="controls" aria-label="数据筛选">
+        <div class="seg" id="seg-type" role="tablist" aria-label="数据类型">
+          <button data-type="player" class="on" role="tab" aria-selected="true" id="tab-player">选手</button>
+          <button data-type="team"               role="tab" aria-selected="false" id="tab-team">队伍</button>
+        </div>
+        <select id="sel-season" class="native-select" aria-label="选择赛季">
+          <option value="">选择赛季</option>
+        </select>
+        <button class="icon-btn" id="theme-toggle" aria-label="切换主题" title="切换亮 / 暗主题">
+          <span class="icon-text" id="theme-icon">☀️</span>
+        </button>
+        <a class="icon-btn" id="charts-link" href="./charts.html?v=20260626d" aria-label="多维数据图集" title="L2 多维数据图集">
+          <span class="icon-text">📊</span>
+        </a>
+      </nav>
+
+      <!-- detail 态：选手卡片（名称 + 标签 + 双评分 一卡呈现） -->
+      <section class="hero-card" id="hero-card">
+        <header class="hero-head">
+          <h1 class="title" id="t-name">—</h1>
+          <div class="tags" id="t-tags"></div>
+        </header>
+        <div class="stat-column" id="stat-column-detail">
+          <div class="stat" id="stat-1">
+            <div class="stat-head"><em id="s1-sub">综合评分</em></div>
+            <div class="stat-body">
+              <div class="stat-num" id="s1-val">—</div>
+              <div class="stat-rank" id="s1-rank">#—</div>
+            </div>
+            <div class="stat-bar" id="s1-bar" style="width:0%"></div>
+          </div>
+          <div class="stat" id="stat-2">
+            <div class="stat-head"><em id="s2-sub">赛季评分</em></div>
+            <div class="stat-body">
+              <div class="stat-num" id="s2-val">—</div>
+              <div class="stat-rank" id="s2-rank">#—</div>
+            </div>
+            <div class="stat-bar" id="s2-bar" style="width:0%"></div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- 中栏：雷达 / 空态 / 选择提示 -->
+    <main class="center-col fade-in" style="animation-delay:.05s">
+
+      <section class="view-empty" id="view-empty">
+        <div class="empty-hero">
+          <div class="empty-mark" aria-hidden="true">
+            <span class="empty-mark-bar"></span>
+            <span class="empty-mark-bar"></span>
+            <span class="empty-mark-bar"></span>
+          </div>
+          <h2>暂无赛季数据</h2>
+          <p class="empty-desc">
+            请先运行 L1 雷达导出脚本：<br>
+            <code>python3 scripts/10_export_l1_radar.py</code>
+          </p>
+          <button class="btn-primary" id="btn-retry">重新加载</button>
+        </div>
+      </section>
+
+      <section class="radar-card" id="radar-card">
+        <div class="radar-header">
+          <div class="legend">
+        <button type="button" class="lg-toggle" data-series="self" aria-pressed="true"><i class="l-blue"></i><span id="lg-self">该选手</span></button>
+        <button type="button" class="lg-toggle" data-series="avg"  aria-pressed="true"><i class="l-orange"></i><span id="lg-avg">同位置均值</span></button>
+      </div>
+          <span class="radar-subtitle">L1 直透 · 六维雷达</span>
+        </div>
+        <div class="radar-wrap">
+          <canvas id="radar"></canvas>
+          <canvas id="radar-fx"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <!-- 右栏 / 移动端底部：排行榜 + 二级指标 -->
+    <aside class="right-col fade-in" style="animation-delay:.1s">
+
+      <div class="ranking-card" id="ranking-card">
+        <div class="ranking-head">
+          <h3 class="ranking-title" id="ranking-title">评分排行</h3>
+          <div class="ranking-search">
+            <input
+              id="rank-search"
+              class="rank-search-input"
+              type="search"
+              placeholder="搜索名称 / 战队"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="搜索排行榜">
+          </div>
+        </div>
+        <div class="ranking-filter" id="ranking-filter" role="tablist" aria-label="按位置筛选">
+          <button class="rfilter-chip active" data-pos="all" role="tab" aria-selected="true">全部</button>
+          <button class="rfilter-chip" data-pos="top" role="tab">上单</button>
+          <button class="rfilter-chip" data-pos="jng" role="tab">打野</button>
+          <button class="rfilter-chip" data-pos="mid" role="tab">中单</button>
+          <button class="rfilter-chip" data-pos="bot" role="tab">下路</button>
+          <button class="rfilter-chip" data-pos="sup" role="tab">辅助</button>
+        </div>
+        <div class="ranking-list" id="ranking-list"></div>
+      </div>
+
+      <div class="secondary-card" id="secondary-card">
+        <h3 class="secondary-title">二级指标详情</h3>
+        <div class="secondary-list" id="meta-grid"></div>
+      </div>
+    </aside>
+
+  </div>
+
+</div>
+
+<div class="loading-overlay" id="loading-overlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<div class="error-toast" id="error-toast"></div>
+
+<script src="./assets/js/api.js?v=20260626d"></script>
+<script src="./assets/js/router.js?v=20260626d"></script>
+<script src="./assets/js/store.js?v=20260626d"></script>
+<script src="./assets/js/chart.js?v=20260626d"></script>
+<script src="./assets/js/ui.js?v=20260626d"></script>
+<script src="./assets/js/app.js?v=20260626d"></script>
+</body>
+</html>

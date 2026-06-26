@@ -1,0 +1,1 @@
+{"chart_id":"CH18","chart_type":"C5","domain":"player","title":"选手KDA分布","subtitle":"选手 KDA 区间的人数分布","slots":{"s1":"kda_bucket(B)","s2":"选手数","s3":null,"s4":null},"operators":"B+A","sample_min":null,"note":"<1/1-2/2-4/4-6/>=6","primary_view":"l2_player_kda_bucket","columns":["bucket","players"],"rows":[["1.<1",20],["2.1-2",288],["3.2-4",1181],["4.4-6",308],["5.>=6",47]]}

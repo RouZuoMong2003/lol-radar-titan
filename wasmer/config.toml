@@ -1,0 +1,43 @@
+# static-web-server 配置
+# https://static-web-server.net/configuration/config-file/
+[general]
+root        = "/public"
+log-level   = "info"
+host        = "::"
+port        = 80
+
+# SPA 友好（虽然本项目用 hash 路由，但保留兜底）
+page-fallback = "/public/index.html"
+
+# 启用压缩
+compression   = true
+
+# 缓存策略：JSON / 静态资源较激进，HTML 短缓存
+cache-control-headers = true
+
+[advanced]
+
+# 安全头
+[[advanced.headers]]
+source = "**"
+[advanced.headers.headers]
+"X-Content-Type-Options" = "nosniff"
+"Referrer-Policy"        = "no-referrer-when-downgrade"
+
+# index.html / charts.html：短缓存，方便发新版
+[[advanced.headers]]
+source = "**/*.html"
+[advanced.headers.headers]
+"Cache-Control" = "public, max-age=60"
+
+# 带版本戳的 JS/CSS：可以长缓存（实际我们已经 ?v= 强制刷新）
+[[advanced.headers]]
+source = "**/*.{js,css}"
+[advanced.headers.headers]
+"Cache-Control" = "public, max-age=3600"
+
+# 数据 JSON：中等缓存
+[[advanced.headers]]
+source = "**/*.json"
+[advanced.headers.headers]
+"Cache-Control" = "public, max-age=300"

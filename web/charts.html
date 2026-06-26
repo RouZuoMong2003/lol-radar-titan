@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0f172a">
+<title>LoL Radar · L2 多维数据图集</title>
+<meta name="description" content="基于 Oracle's Elixir 数据的 26 张职业赛事多维分析图表。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/tokens.css">
+<link rel="stylesheet" href="./assets/css/components.css">
+<link rel="stylesheet" href="./assets/css/charts.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="charts-page">
+  <header class="charts-header">
+    <div>
+      <h1>L2 多维数据图集</h1>
+      <div class="meta">
+        <span id="charts-meta">加载中…</span>
+        <a href="./index.html">← 返回雷达页</a>
+      </div>
+    </div>
+  </header>
+  <div class="charts-filter" id="charts-filter"></div>
+  <div class="charts-grid" id="charts-grid"></div>
+</div>
+<script src="./assets/js/charts_engine.js"></script>
+<script src="./assets/js/charts_page.js"></script>
+</body>
+</html>

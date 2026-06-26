@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release artifacts
+        run: |
+          chmod +x start.sh scripts/make_release.sh
+          bash scripts/make_release.sh "${GITHUB_REF_NAME}"
+
+      - name: Read release notes
+        id: notes
+        run: |
+          NOTES_FILE="RELEASE_NOTES_${GITHUB_REF_NAME}.md"
+          if [ -f "$NOTES_FILE" ]; then
+            echo "file=$NOTES_FILE" >> "$GITHUB_OUTPUT"
+          else
+            echo "file=CHANGELOG.md" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "${{ github.ref_name }}"
+          body_path: ${{ steps.notes.outputs.file }}
+          # 用 glob：radar-db 包仅当 runner 上有 db/radar.db 时才生成，
+          # gitignore 模式下通常不存在，glob 不匹配会被忽略（fail_on_unmatched_files=false）。
+          files: |
+            dist/lol-radar-engine-${{ github.ref_name }}.zip
+            dist/lol-radar-engine-${{ github.ref_name }}.tar.gz
+            dist/lol-radar-engine-${{ github.ref_name }}-radar-db.tar.gz
+          fail_on_unmatched_files: false
+          draft: false
+          prerelease: false

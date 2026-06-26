@@ -1,0 +1,230 @@
+/* ============================================================
+   LoL Radar UI · Design Tokens（唯一真源）
+   支持亮色/暗色双主题，暗色为默认（电竞风格）
+   手机为基准值，桌面(≥768px)在文件底部覆盖
+   ============================================================ */
+
+/* ---------- 暗色主题（默认） ---------- */
+:root {
+  /* 色板 — 深蓝电竞底色 */
+  --bg: #060810;
+  --bg-poster: #0f1324;
+  --bg-subtle: #111827;
+  --card: rgba(17, 24, 39, 0.85);
+  --card-hover: rgba(30, 41, 59, 0.9);
+  --card-border: rgba(99, 102, 241, 0.12);
+  --glass: rgba(15, 23, 42, 0.7);
+  --ink: #f1f5f9;
+  --ink-2: #94a3b8;
+  --muted: #64748b;
+  --line: rgba(148, 163, 184, 0.08);
+
+  /* 主色 */
+  --blue: #6366f1;
+  --blue-light: #818cf8;
+  --blue-fill: rgba(99, 102, 241, 0.18);
+  --blue-glow: rgba(99, 102, 241, 0.35);
+  --orange: #f59e0b;
+  --orange-fill: rgba(245, 158, 11, 0.14);
+  --accent: #8b5cf6;
+  --accent-bg: rgba(139, 92, 246, 0.12);
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --red-bg: rgba(239, 68, 68, 0.10);
+  --red-ink: #f87171;
+  --green: #34d399;
+  --green-bg: rgba(52, 211, 153, 0.10);
+
+  /* 渐变 */
+  --gradient-hero: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+  --gradient-card: linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, transparent 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%);
+
+  /* 间距（8pt 基准） */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+
+  /* 圆角 */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* 字号（手机基准） */
+  --fs-xs: 10px;
+  --fs-cap: 11px;
+  --fs-body: 13px;
+  --fs-h3: 14px;
+  --fs-h2: 16px;
+  --fs-h1: 20px;
+  --fs-num: 28px;
+  --fs-display: 36px;
+
+  /* 阴影 */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
+  --shadow-hover: 0 4px 20px rgba(99, 102, 241, 0.2), 0 0 40px rgba(99, 102, 241, 0.08);
+  --shadow-poster: 0 10px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* 字体 */
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+
+  /* 布局 */
+  --page-max: 480px;
+  --grid-cols: 1fr;
+
+  /* 动画 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}
+
+/* ---------- 亮色主题 ---------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3eee1;
+    --bg-poster: #fdfbf7;
+    --bg-subtle: #faf8f2;
+    --card: #ffffff;
+    --card-hover: #fdfdfc;
+    --card-border: #e8e2d2;
+    --glass: rgba(253, 251, 247, 0.8);
+    --ink: #1f1b18;
+    --ink-2: #6e655f;
+    --muted: #a39890;
+    --line: rgba(31, 27, 24, 0.05);
+
+    --blue: #2d4a6b;
+    --blue-light: #446890;
+    --blue-fill: rgba(45, 74, 107, 0.05);
+    --blue-glow: rgba(45, 74, 107, 0.1);
+    --orange: #bd5338;
+    --orange-fill: rgba(189, 83, 56, 0.05);
+    --accent: #a18262;
+    --accent-bg: rgba(161, 130, 98, 0.06);
+    --accent-glow: rgba(161, 130, 98, 0.1);
+    --red-bg: rgba(189, 83, 56, 0.05);
+    --red-ink: #b13e2b;
+    --green: #2d7a54;
+    --green-bg: rgba(45, 122, 84, 0.05);
+
+    --gradient-card: linear-gradient(180deg, rgba(161, 130, 98, 0.02) 0%, transparent 100%);
+    --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(161, 130, 98, 0.04), transparent 70%);
+    --gradient-hero: linear-gradient(135deg, #2d2621 0%, #1f1a18 100%);
+
+    --font-display: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+
+    --shadow-card: 0 1px 3px rgba(31, 27, 24, 0.02), 0 4px 16px rgba(31, 27, 24, 0.01);
+    --shadow-glow: 0 0 20px rgba(161, 130, 98, 0.03);
+    --shadow-hover: 0 4px 20px rgba(161, 130, 98, 0.06);
+    --shadow-poster: 0 10px 40px rgba(45, 41, 35, 0.06), 0 2px 8px rgba(45, 41, 35, 0.03);
+  }
+}
+
+/* 手动主题切换支持 */
+[data-theme="light"] {
+  --bg: #f3eee1;
+  --bg-poster: #fdfbf7;
+  --bg-subtle: #faf8f2;
+  --card: #ffffff;
+  --card-hover: #fdfdfc;
+  --card-border: #e8e2d2;
+  --glass: rgba(253, 251, 247, 0.8);
+  --ink: #1f1b18;
+  --ink-2: #6e655f;
+  --muted: #a39890;
+  --line: rgba(31, 27, 24, 0.05);
+
+  --blue: #2d4a6b;
+  --blue-light: #446890;
+  --blue-fill: rgba(45, 74, 107, 0.05);
+  --blue-glow: rgba(45, 74, 107, 0.1);
+  --orange: #bd5338;
+  --orange-fill: rgba(189, 83, 56, 0.05);
+  --accent: #a18262;
+  --accent-bg: rgba(161, 130, 98, 0.06);
+  --accent-glow: rgba(161, 130, 98, 0.1);
+  --red-bg: rgba(189, 83, 56, 0.05);
+  --red-ink: #b13e2b;
+  --green: #2d7a54;
+  --green-bg: rgba(45, 122, 84, 0.05);
+
+  --gradient-card: linear-gradient(180deg, rgba(161, 130, 98, 0.02) 0%, transparent 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(161, 130, 98, 0.04), transparent 70%);
+  --gradient-hero: linear-gradient(135deg, #2d2621 0%, #1f1a18 100%);
+
+  --font-display: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+
+  --shadow-card: 0 1px 3px rgba(31, 27, 24, 0.02), 0 4px 16px rgba(31, 27, 24, 0.01);
+  --shadow-glow: 0 0 20px rgba(161, 130, 98, 0.03);
+  --shadow-hover: 0 4px 20px rgba(161, 130, 98, 0.06);
+  --shadow-poster: 0 10px 40px rgba(45, 41, 35, 0.06), 0 2px 8px rgba(45, 41, 35, 0.03);
+}
+
+/* 手动切换到暗色（覆盖 prefers-color-scheme: light） */
+[data-theme="dark"] {
+  --bg: #0a0e1a;
+  --bg-subtle: #111827;
+  --card: rgba(17, 24, 39, 0.85);
+  --card-hover: rgba(30, 41, 59, 0.9);
+  --card-border: rgba(99, 102, 241, 0.12);
+  --glass: rgba(15, 23, 42, 0.7);
+  --ink: #f1f5f9;
+  --ink-2: #94a3b8;
+  --muted: #64748b;
+  --line: rgba(148, 163, 184, 0.08);
+  --blue-fill: rgba(99, 102, 241, 0.18);
+  --blue-glow: rgba(99, 102, 241, 0.35);
+  --orange-fill: rgba(245, 158, 11, 0.14);
+  --accent-bg: rgba(139, 92, 246, 0.12);
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --red-bg: rgba(239, 68, 68, 0.10);
+  --green-bg: rgba(52, 211, 153, 0.10);
+  --gradient-card: linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, transparent 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
+  --shadow-hover: 0 4px 20px rgba(99, 102, 241, 0.2), 0 0 40px rgba(99, 102, 241, 0.08);
+}
+
+/* ---------- 平板 ---------- */
+@media (min-width: 481px) and (max-width: 767px) {
+  :root {
+    --page-max: 600px;
+  }
+}
+
+/* ---------- 桌面：字号调整 + 单列垂直卡片布局 ---------- */
+@media (min-width: 768px) {
+  :root {
+    --fs-xs: 11px;
+    --fs-cap: 12px;
+    --fs-body: 14px;
+    --fs-h3: 15px;
+    --fs-h2: 18px;
+    --fs-h1: 24px;
+    --fs-num: 36px;
+    --fs-display: 48px;
+    --page-max: 620px;
+    --grid-cols: 1fr;
+  }
+}
+
+/* ---------- 宽屏桌面：双列布局（左雷达，右排行） ---------- */
+@media (min-width: 900px) {
+  :root {
+    --page-max: 920px;
+    --grid-cols: 1.3fr 1fr;
+  }
+}

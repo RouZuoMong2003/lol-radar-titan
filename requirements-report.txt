@@ -1,0 +1,9 @@
+# 仅当生成 PDF 报告时使用：
+#   pip install -r requirements-report.txt
+#
+# WeasyPrint 需要本机已安装：
+#   - Ubuntu/Debian: sudo apt-get install libpango-1.0-0 libpangoft2-1.0-0 fonts-noto-cjk
+#   - macOS:        brew install pango cairo gdk-pixbuf libffi
+#   - Windows:      参考 https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows
+weasyprint>=60
+pypdf>=4.0

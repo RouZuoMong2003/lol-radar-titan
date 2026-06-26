@@ -1,0 +1,561 @@
+/* ============================================================
+ * radar-mobile.css —— 在 components.css 之后加载，承担两件事：
+ *   1. 用 #poster-card[data-view] 显式互斥控制三态视图，禁止重叠
+ *   2. 移动端单列纵向阅读流（控制条 → 雷达 → 评分 → 排行 → 详情）
+ * 桌面端三栏 grid 仍由 components.css 提供。
+ * ============================================================ */
+
+/* ---- 显式互斥：旧 .view-when-* 全部失效，由 id + data-view 决定 ---- */
+#view-empty,
+#view-picker,
+#radar-card,
+#hero-card,
+#secondary-card { display: none !important; }
+
+#poster-card[data-view="empty-seasons"] #view-empty  { display: flex !important; }
+#poster-card[data-view="pick-entity"]   #view-picker { display: flex !important; }
+#poster-card[data-view="detail"] #radar-card,
+#poster-card[data-view="detail"] #hero-card,
+#poster-card[data-view="detail"] #secondary-card { display: flex !important; }
+
+/* empty 态下整列右栏隐藏 */
+#poster-card[data-view="empty-seasons"] .right-col { display: none !important; }
+
+/* ---- 控制条：select 强制可见（覆盖 components.css 的 hidden 老规则） ---- */
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+/* seg（选手/队伍）独占第二行；右端为图集入口（与太阳左右对齐） */
+.controls .seg {
+  /* 让 seg 占第二行左侧大部分宽度，留 36+8 给图集按钮 */
+  flex: 1 1 calc(100% - 44px);
+  order: 2;
+  display: flex;
+  min-width: 0;
+}
+.controls .seg > button {
+  flex: 1 1 50%;
+  min-width: 0;
+  text-align: center;
+  justify-content: center;
+}
+/* 主题键（太阳）：第一行右端 */
+.controls #theme-toggle {
+  flex: 0 0 36px;
+  margin-left: auto;
+  order: 0;
+}
+/* 图集按钮：第二行右端，与太阳上下对齐 */
+.controls #charts-link {
+  flex: 0 0 36px;
+  order: 2;
+  text-decoration: none;
+}
+/* 赛季下拉占第一行左侧 */
+.controls .native-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;   /* 覆盖全局 width:100%，否则会把 icon-btn 挤到下一行 */
+  display: block !important;
+  order: 0;
+}
+
+/* ---- 主题键：emoji ---- */
+.icon-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color .15s, border-color .15s, background .15s;
+  flex-shrink: 0;
+}
+.icon-btn .icon-text {
+  /* emoji 单独控制大小，与汉字回退兼容 */
+  font-size: 18px;
+  line-height: 1;
+}
+.icon-btn:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: var(--blue-fill);
+}
+
+/* ---- 空态：三道纯 CSS 柱形 ---- */
+.empty-hero { text-align: center; max-width: 360px; }
+.empty-mark {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  height: 56px;
+  margin: 0 auto var(--sp-4);
+  opacity: 0.55;
+}
+.empty-mark-bar {
+  display: block;
+  width: 12px;
+  border-radius: 3px 3px 0 0;
+}
+.empty-mark-bar:nth-child(1) { height: 36%; background: var(--blue);   }
+.empty-mark-bar:nth-child(2) { height: 64%; background: var(--orange); }
+.empty-mark-bar:nth-child(3) { height: 92%; background: var(--blue);   }
+
+/* ---- picker 提示 ---- */
+.view-picker {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6) var(--sp-4);
+}
+.picker-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: var(--sp-5) var(--sp-6);
+  border-radius: var(--r-lg);
+  background: var(--gradient-card);
+  border: 1px dashed var(--card-border);
+  text-align: center;
+  max-width: 420px;
+}
+.picker-hint strong { font-size: var(--fs-h3); color: var(--ink); font-weight: 600; }
+.picker-sub { font-size: var(--fs-cap); color: var(--ink-2); }
+
+/* ---- 公式说明 ---- */
+.formula-note summary {
+  cursor: pointer;
+  font-size: var(--fs-cap);
+  color: var(--ink-2);
+  padding: 6px 4px;
+  font-weight: 600;
+}
+.formula-note .fn-body {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  background: var(--bg-subtle);
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+.fn-item { margin-bottom: 8px; }
+.fn-item:last-child { margin-bottom: 0; }
+.fn-en   { font-family: var(--font-mono); color: var(--muted); font-size: 11px; margin-right: 6px; }
+.fn-dim  { color: var(--ink); font-weight: 600; }
+.fn-field{ color: var(--ink-2); }
+.fn-foot { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+
+/* ---- 公式说明：两行式 ---- */
+.fn-line-1 {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.fn-line-2 {
+  color: var(--ink-2);
+  font-size: 11px;
+  line-height: 1.5;
+  padding-left: 6px;
+  border-left: 2px solid var(--line);
+}
+
+/* ---- 缺失的 tag 颜色：slate（战队名用） ---- */
+.tag.slate {
+  background: var(--bg-subtle);
+  color: var(--ink-2);
+  border: 1px solid var(--card-border);
+}
+
+/* ---- 位置筛选 chip 行 ---- */
+.ranking-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.rfilter-chip {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: transparent;
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: color .12s, background .12s, border-color .12s;
+  white-space: nowrap;
+}
+.rfilter-chip:hover {
+  color: var(--ink);
+  border-color: var(--ink-2);
+}
+.rfilter-chip.active {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+  font-weight: 600;
+}
+[data-theme="dark"] .rfilter-chip.active {
+  color: var(--bg);
+}
+
+/* 禁用态：未选赛季时整组 chip + 搜索 同步发灰 */
+.rfilter-chip:disabled,
+.rfilter-chip[disabled] {
+  opacity: .4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.ranking-filter.is-disabled {
+  opacity: .55;
+}
+.rank-search-input:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  background: var(--bg-subtle);
+}
+
+/* 顶栏赛季下拉强调（首屏唯一一级入口） */
+#sel-season {
+  font-weight: 600;
+}
+#sel-season:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+/* ============================================================
+ *   .hero-card：选手卡片（名称 / 标签 / 双评分 一卡呈现）
+ * ============================================================ */
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-card);
+}
+/* 第 1 行：返回 */
+.hero-card .back-btn {
+  align-self: flex-start;
+  margin: 0 0 4px 0;
+}
+/* 第 2 行：名字（左）+ 标签（右，上下两排） */
+.hero-card .hero-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.hero-card .title {
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+.hero-card .tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+/* hero-card 内的 stat 去除外边距 */
+.hero-card .stat-column {
+  margin: 0 !important;
+}
+
+/* ---- 雷达 Chart.js 配置补丁：内置字号偏小，由 chart.js 控制即可，这里仅微调标签 ---- */
+
+/* ============================================================
+ *   桌面端：恢复 components.css 的单行三栏 grid（无通栏 foot）
+ * ============================================================ */
+
+/* ============================================================
+ *   移动端 / 平板（默认）：单列纵向阅读流
+ * ============================================================ */
+@media (max-width: 1023px) {
+  body { padding: 0; background: var(--bg); }
+  .page {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+  .poster-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+  }
+  .sidebar-col, .center-col, .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .controls {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    padding: 8px 10px;
+    box-shadow: var(--shadow-card);
+  }
+  .seg button   { padding: 6px 12px; font-size: 13px; }
+  .native-select{ padding: 8px 28px 8px 12px; font-size: 13px; }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 14px 14px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-card);
+  }
+  .back-btn { margin-bottom: 4px; }
+  .title    { font-size: 26px; line-height: 1.15; margin: 0; }
+  .tags     { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px; }
+
+  .stat-column {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stat       { padding: 12px 14px; }
+  .stat-num   { font-size: 22px; }
+  .stat-rank  { font-size: 11px; }
+
+  .radar-card {
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    padding: 16px;
+    box-shadow: var(--shadow-card);
+  }
+  .radar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .legend { display: flex; gap: 12px; font-size: 11px; color: var(--ink-2); }
+  .legend i {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .l-blue   { background: var(--blue); }
+  .l-orange { background: var(--orange); }
+  .radar-subtitle { font-size: 11px; color: var(--muted); letter-spacing: 0.02em; }
+  .radar-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 360px;
+    margin: 0 auto;
+  }
+  #radar, #radar-fx {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #radar-fx { pointer-events: none; }
+
+  .view-empty {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    padding: 32px 16px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .empty-hero h2  { font-size: 18px; margin: 0 0 6px; }
+  .empty-desc     { font-size: 13px; margin: 0 0 16px; }
+
+  /* ---- 排行榜：固定高内部滚动 ---- */
+  .ranking-card {
+    height: auto !important;
+    max-height: 360px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    padding: 14px;
+    box-shadow: var(--shadow-card);
+    flex-direction: column;
+    min-height: 0;
+    display: flex;
+  }
+  .ranking-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-direction: row !important;
+    margin-bottom: 10px;
+  }
+  .ranking-title { font-size: 14px; margin: 0; }
+  .rank-search-input {
+    flex: 1;
+    max-width: 180px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .ranking-list {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0 -4px;
+    padding: 0 4px;
+  }
+  .ranking-item {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 6px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .ranking-item:last-child { border-bottom: 0; }
+  .ranking-item.active     { background: var(--blue-fill); }
+  .ranking-empty { padding: 16px; color: var(--muted); font-size: 13px; text-align: center; }
+  .rank-number {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .rank-number.rank-1 { color: var(--orange); font-weight: 700; }
+  .rank-number.rank-2,
+  .rank-number.rank-3 { color: var(--blue); font-weight: 700; }
+  .rank-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .rank-name {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .rank-meta { display: flex; gap: 6px; font-size: 11px; color: var(--ink-2); }
+  .rank-pos {
+    padding: 1px 6px;
+    border-radius: var(--r-xs);
+    background: var(--bg-subtle);
+    color: var(--ink-2);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+  .rank-team { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .rank-score {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 14px;
+    text-align: right;
+  }
+
+  /* ---- 二级指标卡：2 列网格 ---- */
+  .secondary-card {
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-md);
+    padding: 14px;
+    box-shadow: var(--shadow-card);
+  }
+  .secondary-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .secondary-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .meta {
+    background: var(--bg-subtle);
+    border: 1px solid var(--card-border);
+    border-radius: var(--r-sm);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .meta-label { font-size: 11px; color: var(--ink-2); letter-spacing: 0.04em; }
+  .meta-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    display: flex; align-items: baseline; gap: 6px;
+    flex-wrap: wrap;
+  }
+  .meta-sub {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 400;
+    font-family: var(--font-mono);
+    margin-left: 2px;
+  }
+}
+
+/* ============================================================
+ *   小屏（<=360px）：进一步压缩
+ * ============================================================ */
+@media (max-width: 360px) {
+  .page { padding: 8px; }
+  .title { font-size: 22px; }
+  .stat-num { font-size: 18px; }
+  .secondary-list { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .meta { padding: 8px 10px; }
+  .ranking-card { max-height: 320px; }
+}

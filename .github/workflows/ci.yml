@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Byte-compile all Python sources
+        run: python -m compileall -q scripts server
+
+      - name: Validate exported JSON
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          bad = []
+          for p in pathlib.Path("web/data").rglob("*.json"):
+              try:
+                  json.loads(p.read_text(encoding="utf-8"))
+              except Exception as e:
+                  bad.append((str(p), repr(e)))
+          if bad:
+              for f, e in bad[:20]:
+                  print("INVALID:", f, e)
+              sys.exit(1)
+          print("All web/data JSON valid.")
+          PY

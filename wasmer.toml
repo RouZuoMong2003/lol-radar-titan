@@ -1,0 +1,34 @@
+# =============================================================================
+# Wasmer Edge 部署配置
+#
+# 本项目以静态网站方式部署到 Wasmer Edge：
+#   - web/ 目录被挂载为 /public
+#   - 由 wasmer/static-web-server 提供 HTTP 服务
+#   - 所有数据都已预生成到 web/data/，无需后端 Python
+#
+# 部署到：https://lol-radar-engine.wasmer.app/
+# =============================================================================
+
+[package]
+name = "rouzuomong2003/lol-radar-engine"
+version = "1.0.0"
+description = "LoL Radar Engine - 六维能力雷达 + L2 多维数据图集"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/RouZuoMong2003/lol-radar-engine"
+
+[dependencies]
+"wasmer/static-web-server" = "^1"
+
+# 把 web/ 目录映射成容器内的 /public，由 static-web-server 提供服务
+[fs]
+"/public" = "web"
+"/settings" = "wasmer"
+
+[[command]]
+name = "script"
+module = "wasmer/static-web-server:webserver"
+runner = "https://webc.org/runner/wasi"
+
+[command.annotations.wasi]
+main-args = ["-w", "/settings/config.toml"]

@@ -1,0 +1,751 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>LCK Revised Top6 Radar Report</title><style>
+@page{size:A4;margin:12mm}*{box-sizing:border-box}body{margin:0;background:#F5EDE2;color:#2C2C2C;font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:12px}.report{max-width:980px;margin:0 auto;padding:22px}.hero{background:#fff;border-radius:18px;padding:24px;margin-bottom:18px}.kicker{color:#6B5BD6;font-weight:800;letter-spacing:.08em}h1{font-family:Georgia,serif;font-size:34px;line-height:1.06;margin:8px 0}h1 span{font-size:22px;color:#6B5BD6}.hero p{line-height:1.75;color:#555}.legend{margin:10px 0;color:#777}.legend i{display:inline-block;width:26px;height:10px;border-radius:6px;margin:0 6px}.blue{background:rgba(59,91,165,.20);border:2px solid #3B5BA5}.orange{background:rgba(217,119,87,.12);border:2px dashed #D97757}nav{display:flex;gap:8px;flex-wrap:wrap}nav a{background:#EDE8FF;color:#6B5BD6;text-decoration:none;padding:6px 12px;border-radius:999px;font-weight:800}.time{font-size:10px;color:#999}.pos-section{break-before:page;page-break-before:always}h2{font-size:22px;margin:10px 0}h2 span{font-family:Georgia,serif;color:#6B5BD6;font-size:25px;margin-right:8px}.role,.summary{background:rgba(255,255,255,.7);border-left:4px solid #6B5BD6;border-radius:12px;padding:10px 12px;line-height:1.7;color:#555}.player-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;margin:12px 0;padding:14px;break-inside:avoid;page-break-inside:avoid}.head{display:flex;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,.08);padding-bottom:8px;margin-bottom:10px}.head h3{font-family:Georgia,serif;font-size:26px;margin:0}.head p{margin:3px 0 0;color:#777}.score{text-align:right;color:#3B5BA5}.score b{font-size:26px;display:block}.score span{font-size:10px;color:#777}.layout{width:100%;border-collapse:collapse;table-layout:fixed}.radar-cell{width:300px;text-align:center;vertical-align:middle}.metric-cell{vertical-align:middle;padding-left:12px}.radar{display:block;margin:auto}.metrics{width:100%;border-collapse:separate;border-spacing:0 5px}.metrics th,.metrics td{text-align:left;padding:6px 7px;background:#F8F6F2}.metrics thead th{background:#ECE7DF;color:#555}.metrics th span{display:block;color:#999;font-weight:400;font-size:10px}.metrics .self{color:#3B5BA5;font-weight:900}.metrics .avg{color:#D97757;font-weight:800}.delta{color:#777;font-size:10px}.comment{margin:9px 0 0;line-height:1.7;color:#555;background:#FBFAF7;border-radius:10px;padding:8px 10px}.formula{break-before:page;page-break-before:always;background:#fff;border-radius:18px;padding:20px}.formula h2{margin-top:0}.formula-block{border-top:1px solid rgba(0,0,0,.1);padding:12px 0}.formula h3{color:#6B5BD6;margin:0 0 6px}.formula p{line-height:1.75;color:#555}.w{width:100%;border-collapse:collapse;margin:8px 0}.w th,.w td{border:1px solid #E5DED4;padding:6px;text-align:center}.w th{background:#F3EFE8}.note{font-size:11px;color:#777}
+@media print{.report{padding:0}.hero,.player-card,.formula{box-shadow:none}.pos-section{margin-top:0}}
+</style></head><body><main class="report">
+      <header class="hero"><div class="kicker">LCK · ROUNDS 1-2 · REBUILT RADAR MODEL</div><h1>Top 6 Radar Report<br><span>Teamfight / Macro / Consistency Rebuilt</span></h1>
+      <p>本版针对 Teamfight、Macro、Consistency 三个原始偏差较大的维度重新建模：一级字段先转为多个二级指标，再在同赛季同位置内做经验分位归一化，最后按位置职责加权。Laning / Mechanics / Adaptation 暂沿用原模型，以便观察三项修正带来的结构变化。</p>
+      <div class="legend"><i class="blue"></i>Player <i class="orange"></i>Top6 Average</div><nav><a href="#top">TOP</a><a href="#jng">JUNGLE</a><a href="#mid">MID</a><a href="#bot">BOT</a><a href="#sup">SUPPORT</a></nav><p class="time">Generated: 2026-06-21 00:27</p></header>
+      
+        <section id="top" class="pos-section">
+          <h2><span>TOP</span>上单 Top 6 · Revised Radar</h2>
+          <p class="role">上单重构后强调：线权能否转化为边线/资源压力，且用高楼层与低波动修正单纯胜率偏差。</p>
+          <p class="summary">新版排序第一为 Kiin，修正评分 1673。前六内部维度领跑：团战决策: Kiin(81)；线上压制: Kiin(97)；长线运营: Kiin(74)；操作上限: Kiin(97)。</p>
+          
+            <article class="player-card">
+              <div class="head"><div><h3>Kiin</h3><p>Gen.G · old #1/10 · revised #1</p></div><div class="score"><b>1673</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,60.5 212.3,90.4 194.0,169.0 135.0,224.2 68.9,173.2 57.7,90.4" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="60.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="212.3" cy="90.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="194.0" cy="169.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="224.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="68.9" cy="173.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="57.7" cy="90.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">81</td><td class="avg">50</td><td><small class='delta'>97 → 81 (-16)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">97</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">74</td><td class="avg">50</td><td><small class='delta'>78 → 74 (-4)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">97</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">83</td><td class="avg">50</td><td><small class='delta'>92 → 83 (-9)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">97</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 97、操作上限 97。最低维度 长线运营 也有 74，整体轮廓较完整。三项重构维度变化：团战 97→81，运营 78→74，稳定 92→83。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Zeus</h3><p>Hanwha Life Esports · old #2/10 · revised #2</p></div><div class="score"><b>1621</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,75.2 208.3,92.7 189.2,166.3 135.0,220.6 81.6,165.8 61.7,92.7" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="75.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="208.3" cy="92.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="189.2" cy="166.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="220.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="81.6" cy="165.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="61.7" cy="92.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">65</td><td class="avg">50</td><td><small class='delta'>50 → 65 (+15)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">92</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">68</td><td class="avg">50</td><td><small class='delta'>50 → 68 (+18)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">93</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">67</td><td class="avg">50</td><td><small class='delta'>97 → 67 (-30)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">92</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 93、版本适应 92。相对短板是 团战决策（65），仍有提升空间。三项重构维度变化：团战 50→65，运营 50→68，稳定 97→67。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>PerfecT</h3><p>KT Rolster · old #6/10 · revised #3</p></div><div class="score"><b>1496</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,90.8 201.9,96.4 181.2,161.7 135.0,206.8 90.4,160.8 89.6,108.8" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="90.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="201.9" cy="96.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="181.2" cy="161.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="206.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="90.4" cy="160.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="89.6" cy="108.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">48</td><td class="avg">50</td><td><small class='delta'>25 → 48 (+23)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">84</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">58</td><td class="avg">50</td><td><small class='delta'>63 → 58 (-5)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">78</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">56</td><td class="avg">50</td><td><small class='delta'>72 → 56 (-16)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">57</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 84、操作上限 78。主要短板是 团战决策（48），雷达内缩明显。三项重构维度变化：团战 25→48，运营 63→58，稳定 72→56。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Siwoo</h3><p>Dplus Kia · old #3/10 · revised #4</p></div><div class="score"><b>1474</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,105.6 192.4,101.9 178.0,159.8 135.0,181.0 80.8,166.3 65.7,95.0" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="105.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="192.4" cy="101.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="178.0" cy="159.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="181.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="80.8" cy="166.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="65.7" cy="95.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">32</td><td class="avg">50</td><td><small class='delta'>55 → 32 (-23)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">72</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">54</td><td class="avg">50</td><td><small class='delta'>91 → 54 (-37)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">50</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">68</td><td class="avg">50</td><td><small class='delta'>87 → 68 (-19)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">87</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 87、线上压制 72。主要短板是 团战决策（32），雷达内缩明显。三项重构维度变化：团战 55→32，运营 91→54，稳定 87→68。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Doran</h3><p>T1 · old #4/10 · revised #5</p></div><div class="score"><b>1460</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,83.5 162.9,118.9 161.3,150.2 135.0,212.3 99.9,155.2 68.9,96.8" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="83.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="162.9" cy="118.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="161.3" cy="150.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="212.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="99.9" cy="155.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="68.9" cy="96.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">56</td><td class="avg">50</td><td><small class='delta'>62 → 56 (-6)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">35</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">33</td><td class="avg">50</td><td><small class='delta'>43 → 33 (-10)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">84</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">44</td><td class="avg">50</td><td><small class='delta'>83 → 44 (-39)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">83</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 84、版本适应 83。主要短板是 长线运营（33），雷达内缩明显。三项重构维度变化：团战 62→56，运营 43→33，稳定 83→44。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Kingen</h3><p>Nongshim RedForce · old #7/10 · revised #6</p></div><div class="score"><b>1396</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,194.8 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,81.6 182.8,107.4 166.1,152.9 135.0,199.4 96.0,157.5 96.0,112.5" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="81.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="182.8" cy="107.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="166.1" cy="152.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="199.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="96.0" cy="157.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="96.0" cy="112.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">58</td><td class="avg">50</td><td><small class='delta'>77 → 58 (-19)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">60</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">39</td><td class="avg">50</td><td><small class='delta'>36 → 39 (+3)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">70</td><td class="avg">65</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">49</td><td class="avg">50</td><td><small class='delta'>38 → 49 (+11)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">49</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 70、线上压制 60。主要短板是 长线运营（39），雷达内缩明显。三项重构维度变化：团战 77→58，运营 36→39，稳定 38→49。</p>
+            </article>
+            
+        </section>
+        
+        <section id="jng" class="pos-section">
+          <h2><span>JUNGLE</span>打野 Top 6 · Revised Radar</h2>
+          <p class="role">打野重构后强调：参团节奏、资源脚印、视野控制与逆风局 impact floor，而非只看队伍胜负。</p>
+          <p class="summary">新版排序第一为 Canyon，修正评分 1641。前六内部维度领跑：团战决策: Canyon(72)；线上压制: Lucid(98)；长线运营: Kanavi(68)；操作上限: Canyon(98)。</p>
+          
+            <article class="player-card">
+              <div class="head"><div><h3>Canyon</h3><p>Gen.G · old #2/12 · revised #1</p></div><div class="score"><b>1641</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,68.8 205.1,94.5 186.8,164.9 135.0,225.2 72.9,170.9 56.9,89.9" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="68.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="205.1" cy="94.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="186.8" cy="164.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="225.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="72.9" cy="170.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="56.9" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">72</td><td class="avg">50</td><td><small class='delta'>94 → 72 (-22)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">88</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">65</td><td class="avg">50</td><td><small class='delta'>67 → 65 (-2)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">98</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">78</td><td class="avg">50</td><td><small class='delta'>98 → 78 (-20)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">98</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 98、操作上限 98。相对短板是 长线运营（65），仍有提升空间。三项重构维度变化：团战 94→72，运营 67→65，稳定 98→78。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Kanavi</h3><p>Hanwha Life Esports · old #1/12 · revised #2</p></div><div class="score"><b>1608</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,78.0 209.9,91.8 189.2,166.3 135.0,217.8 85.6,163.5 64.1,94.1" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="78.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="209.9" cy="91.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="189.2" cy="166.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="217.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="85.6" cy="163.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="64.1" cy="94.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">62</td><td class="avg">50</td><td><small class='delta'>90 → 62 (-28)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">94</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">68</td><td class="avg">50</td><td><small class='delta'>93 → 68 (-25)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">90</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">62</td><td class="avg">50</td><td><small class='delta'>89 → 62 (-27)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">89</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 94、操作上限 90。相对短板是 心态稳定（62），仍有提升空间。三项重构维度变化：团战 90→62，运营 93→68，稳定 89→62。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Lucid</h3><p>Dplus Kia · old #3/12 · revised #3</p></div><div class="score"><b>1600</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,77.0 213.1,89.9 189.2,166.3 135.0,211.4 75.2,169.5 60.9,92.2" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="77.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="213.1" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="189.2" cy="166.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="211.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="75.2" cy="169.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="60.9" cy="92.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">63</td><td class="avg">50</td><td><small class='delta'>98 → 63 (-35)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">98</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">68</td><td class="avg">50</td><td><small class='delta'>85 → 68 (-17)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">83</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">75</td><td class="avg">50</td><td><small class='delta'>62 → 75 (+13)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">93</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 98、版本适应 93。相对短板是 团战决策（63），仍有提升空间。三项重构维度变化：团战 98→63，运营 85→68，稳定 62→75。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Oner</h3><p>T1 · old #4/12 · revised #4</p></div><div class="score"><b>1566</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,77.0 199.5,97.7 178.0,159.8 135.0,221.5 90.4,160.8 67.3,95.9" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="77.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="199.5" cy="97.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="178.0" cy="159.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="221.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="90.4" cy="160.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="67.3" cy="95.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">63</td><td class="avg">50</td><td><small class='delta'>77 → 63 (-14)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">81</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">54</td><td class="avg">50</td><td><small class='delta'>82 → 54 (-28)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">94</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">56</td><td class="avg">50</td><td><small class='delta'>92 → 56 (-36)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">85</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 94、版本适应 85。主要短板是 长线运营（54），雷达内缩明显。三项重构维度变化：团战 77→63，运营 82→54，稳定 92→56。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Willer</h3><p>Kiwoom DRX · old #6/12 · revised #5</p></div><div class="score"><b>1480</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,79.8 196.3,99.6 177.2,159.4 135.0,203.1 89.6,161.2 75.2,100.5" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="79.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="196.3" cy="99.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="177.2" cy="159.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="203.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="89.6" cy="161.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="75.2" cy="100.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">60</td><td class="avg">50</td><td><small class='delta'>81 → 60 (-21)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">77</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">53</td><td class="avg">50</td><td><small class='delta'>77 → 53 (-24)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">74</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">57</td><td class="avg">50</td><td><small class='delta'>55 → 57 (+2)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">75</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 77、版本适应 75。主要短板是 长线运营（53），雷达内缩明显。三项重构维度变化：团战 81→60，运营 77→53，稳定 55→57。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Cuzz</h3><p>KT Rolster · old #5/12 · revised #6</p></div><div class="score"><b>1470</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 191.6,102.3 174.8,158.0 135.0,198.5 95.2,158.0 80.0,103.3" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,92.7 189.2,103.7 170.9,155.7 135.0,199.4 96.8,157.1 71.3,98.2" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="92.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="189.2" cy="103.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="170.9" cy="155.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="199.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="96.8" cy="157.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="71.3" cy="98.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">46</td><td class="avg">50</td><td><small class='delta'>73 → 46 (-27)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">68</td><td class="avg">71</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">45</td><td class="avg">50</td><td><small class='delta'>98 → 45 (-53)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">70</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">48</td><td class="avg">50</td><td><small class='delta'>81 → 48 (-33)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">80</td><td class="avg">69</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 80、操作上限 70。主要短板是 长线运营（45），雷达内缩明显。三项重构维度变化：团战 73→46，运营 98→45，稳定 81→48。</p>
+            </article>
+            
+        </section>
+        
+        <section id="mid" class="pos-section">
+          <h2><span>MID</span>中单 Top 6 · Revised Radar</h2>
+          <p class="role">中单重构后强调：输出压力、对线转图、参团效率与稳定高楼层，避免纯 KDA 或胜率误判。</p>
+          <p class="summary">新版排序第一为 Chovy，修正评分 1712。前六内部维度领跑：团战决策: Chovy(92)；线上压制: Chovy(98)；长线运营: Chovy(90)；操作上限: Chovy(98)。</p>
+          
+            <article class="player-card">
+              <div class="head"><div><h3>Chovy</h3><p>Gen.G · old #1/12 · revised #1</p></div><div class="score"><b>1712</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,50.4 213.1,89.9 206.7,176.4 135.0,225.2 64.1,175.9 56.9,89.9" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="50.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="213.1" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="206.7" cy="176.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="225.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="64.1" cy="175.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="56.9" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">92</td><td class="avg">50</td><td><small class='delta'>98 → 92 (-6)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">98</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">90</td><td class="avg">50</td><td><small class='delta'>98 → 90 (-8)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">98</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">89</td><td class="avg">50</td><td><small class='delta'>88 → 89 (+1)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">98</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 98、操作上限 98。最低维度 心态稳定 也有 89，整体轮廓较完整。三项重构维度变化：团战 98→92，运营 98→90，稳定 88→89。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Zeka</h3><p>Hanwha Life Esports · old #2/12 · revised #2</p></div><div class="score"><b>1626</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,61.4 205.9,94.1 186.8,164.9 135.0,217.8 83.2,164.9 60.9,92.2" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="61.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="205.9" cy="94.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="186.8" cy="164.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="217.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="83.2" cy="164.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="60.9" cy="92.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">80</td><td class="avg">50</td><td><small class='delta'>70 → 80 (+10)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">89</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">65</td><td class="avg">50</td><td><small class='delta'>77 → 65 (-12)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">90</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">65</td><td class="avg">50</td><td><small class='delta'>98 → 65 (-33)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">93</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 93、操作上限 90。相对短板是 心态稳定（65），仍有提升空间。三项重构维度变化：团战 70→80，运营 77→65，稳定 98→65。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Bdd</h3><p>KT Rolster · old #4/12 · revised #3</p></div><div class="score"><b>1570</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,66.9 202.7,95.9 182.8,162.6 135.0,208.6 75.2,169.5 74.4,100.0" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="66.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="202.7" cy="95.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="182.8" cy="162.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="208.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="75.2" cy="169.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="74.4" cy="100.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">74</td><td class="avg">50</td><td><small class='delta'>43 → 74 (+31)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">85</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">60</td><td class="avg">50</td><td><small class='delta'>60 → 60 (+0)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">80</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">75</td><td class="avg">50</td><td><small class='delta'>77 → 75 (-2)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">76</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 85、操作上限 80。相对短板是 长线运营（60），仍有提升空间。三项重构维度变化：团战 43→74，运营 60→60，稳定 77→75。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>ShowMaker</h3><p>Dplus Kia · old #5/12 · revised #4</p></div><div class="score"><b>1494</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,101.9 192.4,101.9 182.0,162.1 135.0,195.7 88.0,162.1 64.1,94.1" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="101.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="192.4" cy="101.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="182.0" cy="162.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="195.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="88.0" cy="162.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="64.1" cy="94.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">36</td><td class="avg">50</td><td><small class='delta'>24 → 36 (+12)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">72</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">59</td><td class="avg">50</td><td><small class='delta'>81 → 59 (-22)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">66</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">59</td><td class="avg">50</td><td><small class='delta'>65 → 59 (-6)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">89</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 89、线上压制 72。主要短板是 团战决策（36），雷达内缩明显。三项重构维度变化：团战 24→36，运营 81→59，稳定 65→59。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Ucal</h3><p>Kiwoom DRX · old #7/12 · revised #5</p></div><div class="score"><b>1473</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,71.5 195.6,100.0 183.6,163.1 135.0,204.0 94.4,158.5 88.8,108.3" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="71.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="195.6" cy="100.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="183.6" cy="163.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="204.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="94.4" cy="158.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="88.8" cy="108.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">69</td><td class="avg">50</td><td><small class='delta'>58 → 69 (+11)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">76</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">61</td><td class="avg">50</td><td><small class='delta'>64 → 61 (-3)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">75</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">51</td><td class="avg">50</td><td><small class='delta'>43 → 51 (+8)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">58</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 76、操作上限 75。主要短板是 心态稳定（51），雷达内缩明显。三项重构维度变化：团战 58→69，运营 64→61，稳定 43→51。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Faker</h3><p>T1 · old #3/12 · revised #6</p></div><div class="score"><b>1470</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 187.6,104.6 174.8,158.0 135.0,191.1 95.2,158.0 82.4,104.6" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,96.4 181.2,108.3 178.8,160.3 135.0,189.3 99.9,155.2 66.5,95.4" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="96.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="181.2" cy="108.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="178.8" cy="160.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="189.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="99.9" cy="155.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="66.5" cy="95.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">42</td><td class="avg">50</td><td><small class='delta'>87 → 42 (-45)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">58</td><td class="avg">66</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">55</td><td class="avg">50</td><td><small class='delta'>70 → 55 (-15)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">59</td><td class="avg">61</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">44</td><td class="avg">50</td><td><small class='delta'>91 → 44 (-47)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">86</td><td class="avg">66</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 86、操作上限 59。主要短板是 团战决策（42），雷达内缩明显。三项重构维度变化：团战 87→42，运营 70→55，稳定 91→44。</p>
+            </article>
+            
+        </section>
+        
+        <section id="bot" class="pos-section">
+          <h2><span>BOT</span>下路 Top 6 · Revised Radar</h2>
+          <p class="role">下路重构后强调：输出兑现、经济转化与团战收割，同时用死亡可靠性约束高风险打法。</p>
+          <p class="summary">新版排序第一为 Peyz，修正评分 1673。前六内部维度领跑：团战决策: Peyz(80)；线上压制: Peyz(98)；长线运营: Peyz(82)；操作上限: Peyz(98)。</p>
+          
+            <article class="player-card">
+              <div class="head"><div><h3>Peyz</h3><p>T1 · old #2/14 · revised #1</p></div><div class="score"><b>1673</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,61.4 213.1,89.9 200.3,172.7 135.0,225.2 67.3,174.1 64.1,94.1" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="61.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="213.1" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="200.3" cy="172.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="225.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="67.3" cy="174.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="64.1" cy="94.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">80</td><td class="avg">50</td><td><small class='delta'>79 → 80 (+1)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">98</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">82</td><td class="avg">50</td><td><small class='delta'>81 → 82 (+1)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">98</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">85</td><td class="avg">50</td><td><small class='delta'>91 → 85 (-6)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">89</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 98、线上压制 98。最低维度 团战决策 也有 80，整体轮廓较完整。三项重构维度变化：团战 79→80，运营 81→82，稳定 91→85。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Ruler</h3><p>Gen.G · old #1/14 · revised #2</p></div><div class="score"><b>1617</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,77.0 198.7,98.2 193.2,168.6 135.0,216.9 76.0,169.0 56.9,89.9" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="77.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="198.7" cy="98.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="193.2" cy="168.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="216.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="76.0" cy="169.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="56.9" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">63</td><td class="avg">50</td><td><small class='delta'>98 → 63 (-35)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">80</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">73</td><td class="avg">50</td><td><small class='delta'>78 → 73 (-5)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">89</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">74</td><td class="avg">50</td><td><small class='delta'>95 → 74 (-21)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">98</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 98、操作上限 89。相对短板是 团战决策（63），仍有提升空间。三项重构维度变化：团战 98→63，运营 78→73，稳定 95→74。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Gumayusi</h3><p>Hanwha Life Esports · old #3/14 · revised #3</p></div><div class="score"><b>1612</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,76.1 204.3,95.0 192.4,168.1 135.0,213.2 82.4,165.4 59.3,91.3" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="76.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="204.3" cy="95.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="192.4" cy="168.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="213.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="82.4" cy="165.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="59.3" cy="91.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">64</td><td class="avg">50</td><td><small class='delta'>93 → 64 (-29)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">87</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">72</td><td class="avg">50</td><td><small class='delta'>74 → 72 (-2)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">85</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">66</td><td class="avg">50</td><td><small class='delta'>98 → 66 (-32)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">95</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 95、线上压制 87。相对短板是 团战决策（64），仍有提升空间。三项重构维度变化：团战 93→64，运营 74→72，稳定 98→66。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Aiming</h3><p>KT Rolster · old #5/14 · revised #4</p></div><div class="score"><b>1556</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,66.0 195.6,100.0 191.6,167.7 135.0,220.6 90.4,160.8 82.4,104.6" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="66.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="195.6" cy="100.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="191.6" cy="167.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="220.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="90.4" cy="160.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="82.4" cy="104.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">75</td><td class="avg">50</td><td><small class='delta'>86 → 75 (-11)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">76</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">71</td><td class="avg">50</td><td><small class='delta'>93 → 71 (-22)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">93</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">56</td><td class="avg">50</td><td><small class='delta'>70 → 56 (-14)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">66</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 操作上限 93、线上压制 76。相对短板是 心态稳定（56），仍有提升空间。三项重构维度变化：团战 86→75，运营 93→71，稳定 70→56。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Smash</h3><p>Dplus Kia · old #4/14 · revised #5</p></div><div class="score"><b>1546</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,99.1 209.9,91.8 197.9,171.3 135.0,193.9 86.4,163.1 61.7,92.7" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="99.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="209.9" cy="91.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="197.9" cy="171.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="193.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="86.4" cy="163.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="61.7" cy="92.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">39</td><td class="avg">50</td><td><small class='delta'>72 → 39 (-33)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">94</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">79</td><td class="avg">50</td><td><small class='delta'>98 → 79 (-19)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">64</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">61</td><td class="avg">50</td><td><small class='delta'>83 → 61 (-22)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">92</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 94、版本适应 92。主要短板是 团战决策（39），雷达内缩明显。三项重构维度变化：团战 72→39，运营 98→79，稳定 83→61。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Taeyoon</h3><p>Nongshim RedForce · old #5/14 · revised #6</p></div><div class="score"><b>1538</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 190.0,103.3 174.8,158.0 135.0,196.6 95.2,158.0 80.8,103.7" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,68.8 201.1,96.8 183.6,163.1 135.0,210.4 88.8,161.7 69.7,97.3" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="68.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="201.1" cy="96.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="183.6" cy="163.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="210.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="88.8" cy="161.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="69.7" cy="97.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">72</td><td class="avg">50</td><td><small class='delta'>75 → 72 (-3)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">83</td><td class="avg">69</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">61</td><td class="avg">50</td><td><small class='delta'>90 → 61 (-29)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">82</td><td class="avg">67</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">58</td><td class="avg">50</td><td><small class='delta'>74 → 58 (-16)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">82</td><td class="avg">68</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 线上压制 83、版本适应 82。相对短板是 心态稳定（58），仍有提升空间。三项重构维度变化：团战 75→72，运营 90→61，稳定 74→58。</p>
+            </article>
+            
+        </section>
+        
+        <section id="sup" class="pos-section">
+          <h2><span>SUPPORT</span>辅助 Top 6 · Revised Radar</h2>
+          <p class="role">辅助重构后强调：视野/控图、团战参与、承压生存与失利局韧性，弱化不适合辅助的经济/输出绝对值。</p>
+          <p class="summary">新版排序第一为 Duro，修正评分 1622。前六内部维度领跑：团战决策: Bluffing(84)；线上压制: Delight(90)；长线运营: Duro(84)；操作上限: Duro(98)。</p>
+          
+            <article class="player-card">
+              <div class="head"><div><h3>Duro</h3><p>Gen.G · old #3/14 · revised #1</p></div><div class="score"><b>1622</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,76.1 181.2,108.3 201.9,173.6 135.0,225.2 71.3,171.8 56.9,89.9" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="76.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="181.2" cy="108.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="201.9" cy="173.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="225.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="71.3" cy="171.8" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="56.9" cy="89.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">64</td><td class="avg">50</td><td><small class='delta'>75 → 64 (-11)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">58</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">84</td><td class="avg">50</td><td><small class='delta'>94 → 84 (-10)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">98</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">80</td><td class="avg">50</td><td><small class='delta'>78 → 80 (+2)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">98</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 98、操作上限 98。相对短板是 线上压制（58），仍有提升空间。三项重构维度变化：团战 75→64，运营 94→84，稳定 78→80。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Delight</h3><p>Hanwha Life Esports · old #1/14 · revised #2</p></div><div class="score"><b>1610</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,80.7 206.7,93.6 196.3,170.4 135.0,213.2 87.2,162.6 59.3,91.3" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="80.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="206.7" cy="93.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="196.3" cy="170.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="213.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="87.2" cy="162.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="59.3" cy="91.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">59</td><td class="avg">50</td><td><small class='delta'>72 → 59 (-13)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">90</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">77</td><td class="avg">50</td><td><small class='delta'>98 → 77 (-21)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">85</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">60</td><td class="avg">50</td><td><small class='delta'>93 → 60 (-33)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">95</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 95、线上压制 90。相对短板是 团战决策（59），仍有提升空间。三项重构维度变化：团战 72→59，运营 98→77，稳定 93→60。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Keria</h3><p>T1 · old #4/14 · revised #3</p></div><div class="score"><b>1582</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,86.2 201.9,96.4 191.6,167.7 135.0,209.5 78.4,167.7 64.9,94.5" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="86.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="201.9" cy="96.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="191.6" cy="167.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="209.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="78.4" cy="167.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="64.9" cy="94.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">53</td><td class="avg">50</td><td><small class='delta'>53 → 53 (+0)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">84</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">71</td><td class="avg">50</td><td><small class='delta'>67 → 71 (+4)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">81</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">71</td><td class="avg">50</td><td><small class='delta'>86 → 71 (-15)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">88</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 88、线上压制 84。主要短板是 团战决策（53），雷达内缩明显。三项重构维度变化：团战 53→53，运营 67→71，稳定 86→71。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Career</h3><p>Dplus Kia · old #2/14 · revised #4</p></div><div class="score"><b>1562</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,86.2 204.3,95.0 182.8,162.6 135.0,216.9 84.0,164.4 62.5,93.1" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="86.2" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="204.3" cy="95.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="182.8" cy="162.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="216.9" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="84.0" cy="164.4" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="62.5" cy="93.1" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">53</td><td class="avg">50</td><td><small class='delta'>62 → 53 (-9)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">87</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">60</td><td class="avg">50</td><td><small class='delta'>91 → 60 (-31)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">89</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">64</td><td class="avg">50</td><td><small class='delta'>98 → 64 (-34)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">91</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 91、操作上限 89。主要短板是 团战决策（53），雷达内缩明显。三项重构维度变化：团战 62→53，运营 91→60，稳定 98→64。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Effort</h3><p>KT Rolster · old #5/14 · revised #5</p></div><div class="score"><b>1511</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,78.0 184.4,106.5 185.2,164.0 135.0,196.6 87.2,162.6 70.5,97.7" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="78.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="184.4" cy="106.5" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="185.2" cy="164.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="196.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="87.2" cy="162.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="70.5" cy="97.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">62</td><td class="avg">50</td><td><small class='delta'>66 → 62 (-4)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">62</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">63</td><td class="avg">50</td><td><small class='delta'>86 → 63 (-23)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">67</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">60</td><td class="avg">50</td><td><small class='delta'>72 → 60 (-12)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">81</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 版本适应 81、操作上限 67。相对短板是 心态稳定（60），仍有提升空间。三项重构维度变化：团战 66→62，运营 86→63，稳定 72→60。</p>
+            </article>
+            
+            <article class="player-card">
+              <div class="head"><div><h3>Bluffing</h3><p>Hanwha Life Esports · old #6/14 · revised #6</p></div><div class="score"><b>1489</b><span>revised score</span></div></div>
+              <table class="layout"><tr><td class="radar-cell"><svg class="radar" viewBox="0 0 270 270" width="270" height="270" aria-label="radar chart">
+      <polygon points="135.0,116.6 150.9,125.8 150.9,144.2 135.0,153.4 119.1,144.2 119.1,125.8" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,98.2 166.9,116.6 166.9,153.4 135.0,171.8 103.1,153.4 103.1,116.6" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,79.8 182.8,107.4 182.8,162.6 135.0,190.2 87.2,162.6 87.2,107.4" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,61.4 198.7,98.2 198.7,171.8 135.0,208.6 71.3,171.8 71.3,98.2" fill="none" stroke="#E7E1D8" stroke-width="1"/><polygon points="135.0,43.0 214.7,89.0 214.7,181.0 135.0,227.0 55.3,181.0 55.3,89.0" fill="none" stroke="#E7E1D8" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="43.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="89.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="214.7" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="135.0" y2="227.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="181.0" stroke="#EFE8DE" stroke-width="1"/><line x1="135" y1="135" x2="55.3" y2="89.0" stroke="#EFE8DE" stroke-width="1"/>
+      <polygon points="135.0,89.0 186.0,105.6 174.8,158.0 135.0,193.0 95.2,158.0 81.6,104.2" fill="rgba(217,119,87,.12)" stroke="#D97757" stroke-width="2" stroke-dasharray="5 4"/>
+      <polygon points="135.0,57.7 160.5,120.3 178.8,160.3 135.0,204.0 72.1,171.3 103.1,116.6" fill="rgba(59,91,165,.20)" stroke="#3B5BA5" stroke-width="2.6"/>
+      <circle cx="135.0" cy="57.7" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="160.5" cy="120.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="178.8" cy="160.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="135.0" cy="204.0" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="72.1" cy="171.3" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/><circle cx="103.1" cy="116.6" r="3.2" fill="#3B5BA5" stroke="#fff" stroke-width="1"/>
+    </svg></td><td class="metric-cell"><table class="metrics"><thead><tr><th>Dimension</th><th>Self</th><th>Avg</th><th>Rebuilt Δ</th></tr></thead><tbody>
+              <tr><th>Teamfight<span>团战决策</span></th><td class="self">84</td><td class="avg">50</td><td><small class='delta'>98 → 84 (-14)</small></td></tr>
+            
+              <tr><th>Laning<span>线上压制</span></th><td class="self">32</td><td class="avg">64</td><td></td></tr>
+            
+              <tr><th>Macro<span>长线运营</span></th><td class="self">55</td><td class="avg">50</td><td><small class='delta'>76 → 55 (-21)</small></td></tr>
+            
+              <tr><th>Mechanics<span>操作上限</span></th><td class="self">75</td><td class="avg">63</td><td></td></tr>
+            
+              <tr><th>Consistency<span>心态稳定</span></th><td class="self">79</td><td class="avg">50</td><td><small class='delta'>89 → 79 (-10)</small></td></tr>
+            
+              <tr><th>Adaptation<span>版本适应</span></th><td class="self">40</td><td class="avg">67</td><td></td></tr>
+            </tbody></table></td></tr></table>
+              <p class="comment">新版模型下，强项集中在 团战决策 84、心态稳定 79。主要短板是 线上压制（32），雷达内缩明显。三项重构维度变化：团战 98→84，运营 76→55，稳定 89→79。</p>
+            </article>
+            
+        </section>
+        
+      
+    <section class="formula">
+      <h2>维度计算原理 · Rebuilt Formula Disclosure</h2>
+      <div class="formula-block"><h3>1. Teamfight / 团战决策</h3>
+        <p>二级指标：Participation=Pct(KP)；Damage=55%Pct(DPM)+45%Pct(DamageShare)；Survival=60%Pct(DamageMitigatedPM)+40%Pct(-Deaths/Game)；Conversion=65%Pct(KDA)+35%Pct(Weighted Multikill/Game)；Tempo=Pct((Kills+Assists)/Minute)。</p>
+        <table class="w"><tr><th>Role</th><th>Part.</th><th>Damage</th><th>Survival</th><th>Conv.</th><th>Tempo</th></tr><tr><th>TOP</th><td>20%</td><td>25%</td><td>25%</td><td>15%</td><td>15%</td></tr><tr><th>JUNGLE</th><td>30%</td><td>15%</td><td>15%</td><td>15%</td><td>25%</td></tr><tr><th>MID</th><td>23%</td><td>32%</td><td>10%</td><td>20%</td><td>15%</td></tr><tr><th>BOT</th><td>20%</td><td>42%</td><td>5%</td><td>23%</td><td>10%</td></tr><tr><th>SUPPORT</th><td>38%</td><td>7%</td><td>25%</td><td>10%</td><td>20%</td></tr></table>
+      </div>
+      <div class="formula-block"><h3>2. Macro / 长线运营</h3>
+        <p>二级指标：Vision=45%Pct(VSPM)+25%Pct(WPM)+30%Pct(WCPM)；Objective=Pct(first blood/dragon/herald/baron/tower footprint)；Economy=40%Pct(EarnedGoldShare)+30%Pct(CSPM)+30%Pct(GD@15)；LaneMap=45%Pct(GD@15)+30%Pct(CSD@15)+25%Pct(XPD@15)；Tempo=60%Pct((K+A)/Min)+40%Pct(TeamKPM)。</p>
+        <table class="w"><tr><th>Role</th><th>Vision</th><th>Obj.</th><th>Economy</th><th>LaneMap</th><th>Tempo</th></tr><tr><th>TOP</th><td>15%</td><td>15%</td><td>25%</td><td>30%</td><td>15%</td></tr><tr><th>JUNGLE</th><td>25%</td><td>35%</td><td>5%</td><td>10%</td><td>25%</td></tr><tr><th>MID</th><td>20%</td><td>18%</td><td>22%</td><td>25%</td><td>15%</td></tr><tr><th>BOT</th><td>10%</td><td>15%</td><td>45%</td><td>20%</td><td>10%</td></tr><tr><th>SUPPORT</th><td>45%</td><td>30%</td><td>3%</td><td>2%</td><td>20%</td></tr></table>
+      </div>
+      <div class="formula-block"><h3>3. Consistency / 心态稳定</h3>
+        <p>先构造每局 Game Impact：按位置混合输出、对线、视野、参团、目标、存活和结果等一级字段的局内分位；再计算 High Floor(Q25)、Median Impact、Volatility Control(-IQR)、Death Reliability、Loss Resilience。这样弱化纯胜率对强队选手的偏置，更强调稳定高楼层。</p>
+        <table class="w"><tr><th>Floor</th><th>Median</th><th>Volatility</th><th>Death Rel.</th><th>Loss Res.</th></tr><tr><td>30%</td><td>20%</td><td>20%</td><td>15%</td><td>15%</td></tr></table>
+      </div>
+      <p class="note">Pct 表示同赛季、同位置经验分位。所有维度仍为 0–100，数值只适合在同位置内部比较。PDF 图中为避免渲染重叠，雷达图只保留几何图形，维度名称与分值在右侧表格展示。</p>
+    </section>
+    </main></body></html>

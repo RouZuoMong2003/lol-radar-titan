@@ -1,0 +1,267 @@
+/* ============================================================
+ * L2 多维数据浏览页样式
+ * 移动端优先 (Redmi K80 / 412×916 dp 起步)，桌面端逐级增强
+ * ============================================================ */
+
+/* ---------- 全局：避免任何子内容把页面横向撑出屏幕 ---------- */
+html, body { overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ---------- 基底 ---------- */
+.charts-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
+  font-family: var(--font-sans, system-ui);
+  min-width: 0;
+}
+
+/* ---------- 顶栏 ---------- */
+.charts-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 8px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.charts-header h1 { margin: 0; font-size: 18px; line-height: 1.25; }
+.charts-header .meta {
+  color: var(--muted, #64748b); font-size: 11px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.charts-header a { color: var(--blue, #6366f1); text-decoration: none; }
+
+/* ---------- 筛选区 ---------- */
+.charts-filter {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 0 -12px 10px;       /* 让 chip 横滑条贴满屏幕宽度 */
+  padding: 6px 0;
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg, #fff);
+  backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--line, #e2e8f0);
+  min-width: 0;
+}
+
+.filter-row {
+  display: flex; gap: 6px; align-items: center;
+  padding: 0 12px;
+  min-width: 0;
+}
+/* chip 行允许横向滚动，避免在窄屏上多次折行 */
+.filter-row.scrollable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  /* 关键：在 grid/flex 父中防止被子内容撑开 */
+  width: 100%;
+  max-width: 100vw;
+}
+.filter-row.scrollable::-webkit-scrollbar { display: none; }
+
+.filter-label {
+  font-size: 11px; color: var(--muted, #64748b);
+  letter-spacing: .5px;
+  flex: 0 0 auto;
+  min-width: 32px;
+}
+
+.filter-row .chip {
+  flex: 0 0 auto;
+  padding: 6px 11px;
+  border: 1px solid var(--line, #e2e8f0);
+  background: var(--bg, #fff);
+  border-radius: 999px; cursor: pointer;
+  font-size: 12px; color: var(--ink, #1e293b);
+  line-height: 1.3;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: background .15s, border-color .15s, color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.filter-row .chip:active { transform: scale(.97); }
+.filter-row .chip.on {
+  background: var(--blue, #6366f1); color: #fff; border-color: transparent;
+}
+.filter-row .chip .chip-count {
+  margin-left: 4px; font-size: 10px; opacity: .65;
+}
+
+/* 搜索行 */
+.filter-row.search-row { padding-bottom: 2px; }
+.filter-row input.search {
+  flex: 1; min-width: 0;
+  padding: 7px 12px;
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 999px; background: var(--bg, #fff);
+  font-size: 13px; color: var(--ink, #1e293b);
+  outline: none;
+  -webkit-appearance: none;
+}
+.filter-row input.search:focus { border-color: var(--blue, #6366f1); }
+.filter-row .clear-btn {
+  background: transparent; border: none; cursor: pointer;
+  font-size: 12px; color: var(--muted, #64748b); text-decoration: underline;
+  padding: 4px 8px;
+}
+
+/* ---------- 卡片网格 ----------
+ * 移动端单列；>= 640px 自适应；桌面端再展开
+ */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.chart-card {
+  background: var(--card, #fff); border: 1px solid var(--line, #e2e8f0);
+  border-radius: 12px; padding: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.03);
+  min-width: 0;        /* 关键：允许内部 canvas 收缩到容器宽度 */
+}
+
+.chart-card .ch-title {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 8px; margin-bottom: 2px;
+}
+.chart-card .ch-title h3 {
+  margin: 0; font-size: 14px; font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word;
+}
+.chart-card .ch-title .ch-id {
+  font-size: 10.5px; color: var(--muted, #64748b);
+  font-family: var(--font-mono, monospace);
+  flex: 0 0 auto;
+}
+.chart-card .ch-sub {
+  font-size: 10.5px; color: var(--muted, #64748b);
+  margin-bottom: 8px; line-height: 1.4;
+  word-break: break-word;
+}
+
+/* 卡内工具栏（C1 Top N / C4 实体选 / C6 限条数） */
+.chart-card .ch-toolbar {
+  display: flex; gap: 6px; align-items: center;
+  margin-bottom: 8px; font-size: 11px; color: var(--muted, #64748b);
+  flex-wrap: wrap;
+}
+.chart-card .ch-toolbar select,
+.chart-card .ch-toolbar input {
+  background: var(--bg, #fff); border: 1px solid var(--line, #e2e8f0);
+  border-radius: 6px; padding: 4px 8px;
+  font-size: 12px; color: var(--ink, #1e293b);
+  outline: none; max-width: 60vw;
+  -webkit-appearance: none;
+}
+.chart-card .ch-toolbar select:focus,
+.chart-card .ch-toolbar input:focus { border-color: var(--blue, #6366f1); }
+
+/* 画布尺寸：移动端略矮，桌面端更高 */
+.chart-card .ch-canvas-wrap {
+  position: relative;
+  height: 240px;
+}
+.chart-card.kpi .ch-canvas-wrap { height: auto; }
+/* 雷达图保持正方观感，单列时容器宽度即等于高度上限 */
+.chart-card[data-type="C4"] .ch-canvas-wrap { height: 300px; }
+
+/* ---------- C7 指标卡矩阵（移动端 2 列起步） ---------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.kpi-cell {
+  background: var(--bg-soft, #f8fafc);
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 8px; padding: 8px 10px;
+  min-width: 0;
+}
+.kpi-cell .k-label {
+  font-size: 11px; color: var(--muted, #64748b);
+  font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.kpi-cell .k-value {
+  font-size: 18px; font-weight: 700; color: var(--ink, #1e293b);
+  font-variant-numeric: tabular-nums;
+}
+.kpi-cell .k-row {
+  font-size: 10.5px; color: var(--muted, #64748b); margin-top: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* C7 折叠按钮 */
+.kpi-toggle {
+  display: block; width: 100%;
+  margin-top: 8px; padding: 8px 12px;
+  background: transparent; border: 1px dashed var(--line, #e2e8f0);
+  border-radius: 8px; cursor: pointer;
+  font-size: 12px; color: var(--muted, #64748b);
+  -webkit-tap-highlight-color: transparent;
+}
+.kpi-toggle:active { background: var(--bg-soft, #f8fafc); }
+
+/* 空筛选结果 */
+.empty-result {
+  grid-column: 1 / -1;
+  padding: 48px 16px; text-align: center;
+  color: var(--muted, #64748b); font-size: 13px;
+}
+.empty-result code {
+  background: var(--bg-soft, #f8fafc); padding: 2px 6px; border-radius: 4px;
+}
+
+/* ============================================================
+ *  断点：≥ 480px（横屏窄手机 / 折叠展开）
+ * ============================================================ */
+@media (min-width: 480px) {
+  .chart-card .ch-canvas-wrap { height: 260px; }
+  .chart-card[data-type="C4"] .ch-canvas-wrap { height: 320px; }
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============================================================
+ *  断点：≥ 640px（平板竖屏 / 小桌面）
+ * ============================================================ */
+@media (min-width: 640px) {
+  .charts-page { padding: 16px; }
+  .charts-filter { margin-left: -16px; margin-right: -16px; }
+  .filter-row { padding: 0 16px; }
+  .charts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 14px;
+  }
+  .chart-card .ch-canvas-wrap { height: 280px; }
+  .chart-card[data-type="C4"] .ch-canvas-wrap { height: 340px; }
+  .kpi-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+}
+
+/* ============================================================
+ *  断点：≥ 1024px（桌面）
+ * ============================================================ */
+@media (min-width: 1024px) {
+  .charts-page { padding: 24px; }
+  .charts-filter {
+    margin-left: 0; margin-right: 0;
+    position: static; border-bottom: none;
+    background: transparent; backdrop-filter: none;
+  }
+  .filter-row { padding: 0; }
+  .filter-row.scrollable { overflow: visible; flex-wrap: wrap; }
+  .charts-header h1 { font-size: 20px; }
+  .charts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+ *  暗色 / 系统暗色模式（沿用 tokens.css 已有变量；这里仅补背景透明问题）
+ * ============================================================ */
+@media (prefers-color-scheme: dark) {
+  .charts-filter { background: var(--bg, #0f172a); }
+  .filter-row .chip { background: transparent; }
+}

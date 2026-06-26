@@ -1,0 +1,50 @@
+# SQLite 运行时
+db/*.db
+db/*.db-shm
+db/*.db-wal
+db/_stage_*.pkl
+server/*.db
+server/*.db.*
+
+# 源数据 CSV（体积大、版权归原始来源）——但保留 data/README.md
+data/*
+!data/README.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# 备份文件
+*.bak
+
+# 报告渲染中间产物
+reports/**/preview/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node.js (仅在前端增加构建工具时)
+node_modules/
+
+# 发布产物
+dist/
+*.zip
+*.tar.gz
+
+# 启动脚本自动建的虚拟环境标记
+.venv/.deps_installed
+
+# 日志/临时
+*.log
+*.tmp
+
+# Gemini/Agent workspace config
+.gemini/
+

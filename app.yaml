@@ -1,0 +1,6 @@
+# Wasmer Edge App 部署清单
+# 文档: https://docs.wasmer.io/edge/configuration
+---
+kind: wasmer.io/App.v0
+name: lol-radar-engine
+package: .
